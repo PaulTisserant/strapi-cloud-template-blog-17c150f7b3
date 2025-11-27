@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_contacts",
+  "info": {
+    "name": "Contact",
+    "icon": "phone",
+    "displayName": "Contact",
+    "description": "Coordonnées pour contacter l'établissement"
+  },
+  "options": {},
+  "attributes": {
+    "telephone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "site_web": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_shared_offres",
+  "info": {
+    "name": "Offre",
+    "icon": "tags",
+    "displayName": "Offre",
+    "description": "Regroupe les informations sur l'offre et les prix"
+  },
+  "options": {},
+  "attributes": {
+    "type_doffre": {
+      "type": "string"
+    },
+    "offre_detail": {
+      "type": "text"
+    },
+    "prix_min": {
+      "type": "decimal"
+    },
+    "prix_max": {
+      "type": "decimal"
+    }
+  }
+}

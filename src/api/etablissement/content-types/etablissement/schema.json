@@ -1,0 +1,85 @@
+{
+  "kind": "collectionType",
+  "collectionName": "etablissements",
+  "info": {
+    "singularName": "etablissement",
+    "pluralName": "etablissements",
+    "displayName": "Etablissement"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nom_etablissement": {
+      "type": "string",
+      "required": true
+    },
+    "type_etablissement": {
+      "type": "enumeration",
+      "enum": [
+        "individuel",
+        "franchise",
+        "autre"
+      ]
+    },
+    "theme_etablissement": {
+      "type": "enumeration",
+      "enum": [
+        "restaurant",
+        "loisirs",
+        "commerce",
+        "autre"
+      ]
+    },
+    "categorie_restaurant": {
+      "type": "enumeration",
+      "default": "autre",
+      "enum": [
+        "cuisine_traditionnelle",
+        "fast_food",
+        "cuisine_du_monde",
+        "autre"
+      ]
+    },
+    "location": {
+      "type": "component",
+      "component": "shared.location",
+      "repeatable": false
+    },
+    "contact": {
+      "type": "component",
+      "component": "shared.contact",
+      "repeatable": false
+    },
+    "offre": {
+      "type": "component",
+      "component": "shared.offre",
+      "repeatable": false
+    },
+    "ouverture": {
+      "type": "component",
+      "component": "shared.ouverture",
+      "repeatable": false
+    },
+    "presentation": {
+      "type": "text"
+    },
+    "infos_supplementaires": {
+      "type": "text"
+    },
+    "geoloc_json": {
+      "type": "json"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    }
+  }
+}

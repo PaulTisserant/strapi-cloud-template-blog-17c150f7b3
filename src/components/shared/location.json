@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_shared_locations",
+  "info": {
+    "name": "Location",
+    "icon": "map-marker-alt",
+    "displayName": "Location",
+    "description": "Regroupe les informations d'adresse et localisation"
+  },
+  "options": {},
+  "attributes": {
+    "adresse": {
+      "type": "text"
+    },
+    "code_postal": {
+      "type": "string"
+    },
+    "ville": {
+      "type": "string"
+    },
+    "region": {
+      "type": "string"
+    },
+    "departement": {
+      "type": "string"
+    },
+    "pays": {
+      "type": "string"
+    },
+    "geoloc_json": {
+      "type": "json"
+    }
+  }
+}

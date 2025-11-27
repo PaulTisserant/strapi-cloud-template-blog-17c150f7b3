@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_ouvertures",
+  "info": {
+    "name": "Ouverture",
+    "icon": "clock",
+    "displayName": "Ouverture",
+    "description": "Informations d'ouverture / horaires"
+  },
+  "options": {},
+  "attributes": {
+    "ouverture": {
+      "type": "text"
+    },
+    "explication_ouverture": {
+      "type": "text"
+    }
+  }
+}

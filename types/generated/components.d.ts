@@ -1,75 +1,76 @@
-import type { Struct, Schema } from '@strapi/strapi';
+import type { Schema, Struct } from '@strapi/strapi';
 
-export interface SharedSlider extends Struct.ComponentSchema {
-  collectionName: 'components_shared_sliders';
+export interface SharedContact extends Struct.ComponentSchema {
+  collectionName: 'components_shared_contacts';
   info: {
-    displayName: 'Slider';
-    icon: 'address-book';
-    description: '';
+    description: "Coordonn\u00E9es pour contacter l'\u00E9tablissement";
+    displayName: 'Contact';
+    icon: 'phone';
+    name: 'Contact';
   };
   attributes: {
-    files: Schema.Attribute.Media<'images', true>;
+    email: Schema.Attribute.String;
+    site_web: Schema.Attribute.String;
+    telephone: Schema.Attribute.String;
   };
 }
 
-export interface SharedSeo extends Struct.ComponentSchema {
-  collectionName: 'components_shared_seos';
+export interface SharedLocation extends Struct.ComponentSchema {
+  collectionName: 'components_shared_locations';
   info: {
-    name: 'Seo';
-    icon: 'allergies';
-    displayName: 'Seo';
-    description: '';
+    description: "Regroupe les informations d'adresse et localisation";
+    displayName: 'Location';
+    icon: 'map-marker-alt';
+    name: 'Location';
   };
   attributes: {
-    metaTitle: Schema.Attribute.String & Schema.Attribute.Required;
-    metaDescription: Schema.Attribute.Text & Schema.Attribute.Required;
-    shareImage: Schema.Attribute.Media<'images'>;
+    adresse: Schema.Attribute.Text;
+    code_postal: Schema.Attribute.String;
+    departement: Schema.Attribute.String;
+    geoloc_json: Schema.Attribute.JSON;
+    pays: Schema.Attribute.String;
+    region: Schema.Attribute.String;
+    ville: Schema.Attribute.String;
   };
 }
 
-export interface SharedRichText extends Struct.ComponentSchema {
-  collectionName: 'components_shared_rich_texts';
+export interface SharedOffre extends Struct.ComponentSchema {
+  collectionName: 'components_shared_offres';
   info: {
-    displayName: 'Rich text';
-    icon: 'align-justify';
-    description: '';
+    description: "Regroupe les informations sur l'offre et les prix";
+    displayName: 'Offre';
+    icon: 'tags';
+    name: 'Offre';
   };
   attributes: {
-    body: Schema.Attribute.RichText;
+    offre_detail: Schema.Attribute.Text;
+    prix_max: Schema.Attribute.Decimal;
+    prix_min: Schema.Attribute.Decimal;
+    type_doffre: Schema.Attribute.String;
   };
 }
 
-export interface SharedQuote extends Struct.ComponentSchema {
-  collectionName: 'components_shared_quotes';
+export interface SharedOuverture extends Struct.ComponentSchema {
+  collectionName: 'components_shared_ouvertures';
   info: {
-    displayName: 'Quote';
-    icon: 'indent';
+    description: "Informations d'ouverture / horaires";
+    displayName: 'Ouverture';
+    icon: 'clock';
+    name: 'Ouverture';
   };
   attributes: {
-    title: Schema.Attribute.String;
-    body: Schema.Attribute.Text;
-  };
-}
-
-export interface SharedMedia extends Struct.ComponentSchema {
-  collectionName: 'components_shared_media';
-  info: {
-    displayName: 'Media';
-    icon: 'file-video';
-  };
-  attributes: {
-    file: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    explication_ouverture: Schema.Attribute.Text;
+    ouverture: Schema.Attribute.Text;
   };
 }
 
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
-      'shared.slider': SharedSlider;
-      'shared.seo': SharedSeo;
-      'shared.rich-text': SharedRichText;
-      'shared.quote': SharedQuote;
-      'shared.media': SharedMedia;
+      'shared.contact': SharedContact;
+      'shared.location': SharedLocation;
+      'shared.offre': SharedOffre;
+      'shared.ouverture': SharedOuverture;
     }
   }
 }
