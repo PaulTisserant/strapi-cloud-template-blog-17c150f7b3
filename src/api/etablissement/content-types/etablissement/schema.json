@@ -19,27 +19,45 @@
       "type": "enumeration",
       "enum": [
         "individuel",
-        "franchise",
-        "autre"
+        "hebergement",
+        "privilege",
+        "departemental",
+        "national"
       ]
     },
     "theme_etablissement": {
       "type": "enumeration",
       "enum": [
         "restaurant",
-        "loisirs",
-        "commerce",
-        "autre"
+        "loisir",
+        "bienetre",
+        "hotel",
+        "commerce"
       ]
     },
     "categorie_restaurant": {
       "type": "enumeration",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "theme_etablissement"
+            },
+            "restaurant"
+          ]
+        }
+      },
       "default": "autre",
       "enum": [
-        "cuisine_traditionnelle",
-        "fast_food",
+        "cuisine_creative",
         "cuisine_du_monde",
-        "autre"
+        "cuisine_traditionnelle",
+        "gastronomie",
+        "brasserie",
+        "restauration_rapide",
+        "creperie",
+        "cuisine_bio",
+        "cafeteria"
       ]
     },
     "location": {
@@ -67,9 +85,6 @@
     },
     "infos_supplementaires": {
       "type": "text"
-    },
-    "geoloc_json": {
-      "type": "json"
     },
     "images": {
       "type": "media",

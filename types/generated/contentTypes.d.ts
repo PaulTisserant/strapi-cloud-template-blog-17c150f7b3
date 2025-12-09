@@ -443,14 +443,23 @@ export interface ApiEtablissementEtablissement
   };
   attributes: {
     categorie_restaurant: Schema.Attribute.Enumeration<
-      ['cuisine_traditionnelle', 'fast_food', 'cuisine_du_monde', 'autre']
+      [
+        'cuisine_creative',
+        'cuisine_du_monde',
+        'cuisine_traditionnelle',
+        'gastronomie',
+        'brasserie',
+        'restauration_rapide',
+        'creperie',
+        'cuisine_bio',
+        'cafeteria',
+      ]
     > &
       Schema.Attribute.DefaultTo<'autre'>;
     contact: Schema.Attribute.Component<'shared.contact', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    geoloc_json: Schema.Attribute.JSON;
     images: Schema.Attribute.Media<'images' | 'files' | 'videos', true> &
       Schema.Attribute.Required;
     infos_supplementaires: Schema.Attribute.Text;
@@ -467,10 +476,10 @@ export interface ApiEtablissementEtablissement
     presentation: Schema.Attribute.Text;
     publishedAt: Schema.Attribute.DateTime;
     theme_etablissement: Schema.Attribute.Enumeration<
-      ['restaurant', 'loisirs', 'commerce', 'autre']
+      ['restaurant', 'loisir', 'bienetre', 'hotel', 'commerce']
     >;
     type_etablissement: Schema.Attribute.Enumeration<
-      ['individuel', 'franchise', 'autre']
+      ['individuel', 'hebergement', 'privilege', 'departemental', 'national']
     >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
