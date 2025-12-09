@@ -10,7 +10,7 @@ export interface SharedContact extends Struct.ComponentSchema {
   };
   attributes: {
     email: Schema.Attribute.String;
-    site_web: Schema.Attribute.String;
+    site_web: Schema.Attribute.Text;
     telephone: Schema.Attribute.String;
   };
 }

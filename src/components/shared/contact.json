@@ -15,7 +15,7 @@
       "type": "string"
     },
     "site_web": {
-      "type": "string"
+      "type": "text"
     }
   }
 }
