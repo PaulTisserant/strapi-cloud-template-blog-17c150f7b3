@@ -1,0 +1,72 @@
+{
+  "kind": "collectionType",
+  "collectionName": "activation_cartes",
+  "info": {
+    "singularName": "activation-carte",
+    "pluralName": "activation-cartes",
+    "displayName": "Activation Carte",
+    "description": "Gestion des activations de cartes"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "submit_time": {
+      "type": "float",
+      "required": true
+    },
+    "nom": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "prenom": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "email": {
+      "type": "email"
+    },
+    "telephone": {
+      "type": "string",
+      "maxLength": 50
+    },
+    "ville": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "entreprise": {
+      "type": "text"
+    },
+    "code": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "annee": {
+      "type": "string",
+      "maxLength": 10
+    },
+    "mois": {
+      "type": "string",
+      "maxLength": 10
+    },
+    "departement": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "departement_name": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "rgpd": {
+      "type": "boolean"
+    },
+    "ip": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "newsletter": {
+      "type": "boolean"
+    }
+  }
+}

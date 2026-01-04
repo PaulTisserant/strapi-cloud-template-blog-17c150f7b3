@@ -430,6 +430,80 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiActivationCarteActivationCarte
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'activation_cartes';
+  info: {
+    description: 'Gestion des activations de cartes';
+    displayName: 'Activation Carte';
+    pluralName: 'activation-cartes';
+    singularName: 'activation-carte';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    annee: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 10;
+      }>;
+    code: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    departement: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+      }>;
+    departement_name: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+      }>;
+    email: Schema.Attribute.Email;
+    entreprise: Schema.Attribute.Text;
+    ip: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::activation-carte.activation-carte'
+    > &
+      Schema.Attribute.Private;
+    mois: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 10;
+      }>;
+    newsletter: Schema.Attribute.Boolean;
+    nom: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+      }>;
+    prenom: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    rgpd: Schema.Attribute.Boolean;
+    submit_time: Schema.Attribute.Float & Schema.Attribute.Required;
+    telephone: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 50;
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    ville: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+      }>;
+  };
+}
+
 export interface ApiEtablissementEtablissement
   extends Struct.CollectionTypeSchema {
   collectionName: 'etablissements';
@@ -997,6 +1071,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::activation-carte.activation-carte': ApiActivationCarteActivationCarte;
       'api::etablissement.etablissement': ApiEtablissementEtablissement;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
